@@ -25,9 +25,9 @@ sudo apt-get install -y tshark
 
 # set up Git config
 echo "[ELI DOTFILES] (${USER:-UNSET} => ${HOME:-UNSET}) Update Git config..."
-git config  --replace-all user.email elireisman@github.com
-git config  --replace-all user.name elireisman
-git config  --replace-all github.user elireisman
+git config  --replace-all user.email initialcontext@gmail.com
+git config  --replace-all user.name initialcontext
+git config  --replace-all github.user initialcontext
 
 # Install config files
 echo "[ELI DOTFILES] (${USER:-UNSET} => ${HOME:-UNSET}) Installing config files..."
@@ -50,4 +50,4 @@ git clone https://github.com/chrisbra/unicode.vim.git "$HOME/.vim/pack/plugins/s
 # Register SSH keys from GitHub
 echo "[ELI DOTFILES]  (${USER:-UNSET} => ${HOME:-UNSET}) Installing authorized SSH keys..."
 mkdir -p "$HOME/.ssh"
-curl --silent --fail "https://github.com/elireisman.keys" >> "$HOME/.ssh/authorized_keys"
+curl --silent --fail "https://github.com/initialcontext.keys" >> "$HOME/.ssh/authorized_keys"
