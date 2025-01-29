@@ -29,3 +29,13 @@ nmap <C-p> :w<CR>:CtrlP<CR>
 imap <C-p> <ESC>:w<CR>:tabnew<CR>:CtrlP<Cr>
 
 let g:rustfmt_autosave = 1
+packadd lsp
+
+" Rust language server
+call LspAddServer([#{
+	\    name: 'rustlang',
+	\    filetype: ['rust'],
+	\    path: '/usr/local/bin/rust-analyzer',
+	\    args: [],
+	\    syncInit: v:true
+	\  }])
