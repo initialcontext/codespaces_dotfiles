@@ -28,8 +28,10 @@ imap <C-n> :w<CR>:tabnew<CR>:NERDTreeToggle<CR>
 nmap <C-p> :w<CR>:CtrlP<CR>
 imap <C-p> <ESC>:w<CR>:tabnew<CR>:CtrlP<Cr>
 
-let g:rustfmt_autosave = 1
+" set up vim-lsp client
 packadd lsp
+
+let g:rustfmt_autosave = 1
 
 " Rust language server
 call LspAddServer([#{
