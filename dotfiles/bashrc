@@ -20,8 +20,6 @@ alias gdc='git diff --cached'
 alias ll='ls -lahFG '
 alias vi='vim -p '
 alias vim='vim -p '
-alias rmdocker='docker ps -a | cut -d " " -f1 | grep -v CONTAINER | xargs docker rm -f'
-alias fucking="sudo"
 
 # functions
 function gri {
@@ -116,6 +114,9 @@ function parse_git_dirty {
 
 export PS1="🔑 \[\e[33m\][\[\e[m\]\u\[\e[33m\]]\[\e[m\]    ⏰ \[\e[33m\]\t\[\e[m\]    📍 \[\e[32m\]\w\[\e[m\]    ⚠️ \[\e[36m\]\`parse_git_branch\`\[\e[m\]\n$ "
 
+# inject tool envs
+. "$HOME/.cargo/env"
+. "$HOME/.local/bin/env"
+
 # must go last! 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
