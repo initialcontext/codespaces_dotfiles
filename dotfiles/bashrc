@@ -114,7 +114,8 @@ function parse_git_dirty {
 
 export PS1="🔑 \[\e[33m\][\[\e[m\]\u\[\e[33m\]]\[\e[m\]    ⏰ \[\e[33m\]\t\[\e[m\]    📍 \[\e[32m\]\w\[\e[m\]    ⚠️ \[\e[36m\]\`parse_git_branch\`\[\e[m\]\n$ "
 
-# inject tool envs
+# inject tool PATH entries and envs
+export PATH=$PATH:/usr/local/go/bin
 . "$HOME/.cargo/env"
 . "$HOME/.local/bin/env"
 
