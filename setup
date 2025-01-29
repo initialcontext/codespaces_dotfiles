@@ -23,7 +23,11 @@ echo "[ELI DOTFILES] (${USER:-UNSET} => ${HOME:-UNSET}) Installing tshark..."
 echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
 sudo apt-get install -y tshark
 
-# TODO: install rustup & Rust tools, LSP server
+# install Golang
+GO_VERSION=$(curl -q -sSL 'https://go.dev/VERSION?m=text' | grep go | sed -i 's/go//g')
+rm -rf /usr/local/go && tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
+
+# install rustup & Rust tools, LSP server
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 rustup component add rust-analyzer
 
